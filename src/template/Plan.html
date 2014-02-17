@@ -1,0 +1,22 @@
+<h3><%- template.title %></h3>
+<ul class="listview" data-role="listview">
+<% var i = 0; for (i = 0; i < template.steps.length; i += 1) { %>
+  <li class="plan-step" data-index="<%- i %>"
+      <% if (stepsDone[i]) { %>
+      style="background: url('images/green.png'); background-size: 100% 100%; background-position: 0 0; background-repeat: no-repeat"
+      <% } %>
+      >
+    <div>
+      <% if (stepsDone[i]) { %>
+        <img src="images/checked.png">
+      <% } else { %>
+        <img src="images/unchecked.png">
+      <% } %>
+        <%- template.steps[i].name %>
+    </div>
+    <% if (template.steps[i].count) { %>
+      <p id="loot" class="require-<% if (lootCount[i] < template.steps[i].count) { %>deny<% } else { %>ok<% } %>"><strong>Have <%- lootCount[i] %> / <%- template.steps[i].count %> <%- lootTitle[i] %></strong></p>
+    <% } %>
+  </li>
+<% } %>
+</ul>

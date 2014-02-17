@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Checklist of Doom</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="shortcut icon" href="favicon.ico"/>
+  <link rel="stylesheet" style="text/css"
+        href="lib/jquery.mobile-1.4.0-alpha.2.min.css">
+
+  <script data-main="js/main" src="lib/require-jquery.js"></script>
+  <style>
+
+.ui-li .ui-btn-text, .ui-li-desc, .ui-listview>li p {
+    white-space: normal;
+}
+.ui-listview .ui-li-static, .ui-listview .ui-li-divider, .ui-listview>li>a.ui-btn {
+    white-space: normal;
+}
+
+.require-deny, .require-ok {
+ text-align: right;
+}
+.require-deny strong {
+ color: #aa3333;
+ background-color: #eeeeee;
+ padding: 6px;
+}
+.require-ok strong {
+ color: #33aa33;
+ background-color: #eeeeee;
+ padding: 6px;
+}
+  </style>
+</head>
+<body id="app" style="display: none; -moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select: none">
+
+  <!--
+      Intro page
+    -->
+  <div data-role="page" class="type-interior" id="intro-page">
+    <div data-role="header" data-position="fixed">
+      <h1>Checklist of Doom</h1>
+    </div>
+    <div data-role="content">
+      <h1>Tutorial</h1>
+      <p>Soon... soon the world will be in the palm of your hand. All you have to do is come up with the right scheme and you'll show them...</p>
+      <h3>You'll show all of them! Hahahahahahahaha!</h3>
+      <h1><a href="#plan-page" data-role="button" id="tutorial-button">Tutorial</a></h1>
+
+      <hr>
+      <h1>A Dark Scheme</h1>
+      <p>It is time to let your evil organizational skills shine. You have just created a truly brilliant scheme. Soon, you will have the power to move the moon in front of the sun. This will cause a permanent total eclipse. You will hold sunlight itself for ransom.</p>
+      <h3>Unless they wish to face eternal darkness, they will pay you one million dollars!</h3>
+      <h1><a href="#plan-page" data-role="button" id="dark-scheme-button">A Dark Scheme</a></h1>
+    </div>
+  </div>
+
+  <!--
+      Plan page
+    -->
+  <div data-role="page" class="type-interior" id="plan-page">
+    <div data-role="header">
+      <h1>Checklist of Doom</h1>
+      <div data-role="navbar" id="menu">
+        <ul>
+          <li><a href="#plan-page" class="ui-btn-active ui-state-persist">Plans</a></li>
+          <li><a href="#gadget-page">Gadgets</a></li>
+          <li><a href="#loot-page">Loot</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div data-role="content" id="plan-content">
+      <h1>Your clever schemes:</h1>
+<!--      <div data-role="collapsible-set" data-theme="c" data-content-theme="d"
+           id="plan-list"></div>
+  -->
+      <div id="plan-list"></div>
+      <a href="#build-page" data-role="button">Hatch New Plan</a>
+    </div>
+  </div>
+
+  <!--
+      Gadget page
+    -->
+  <div data-role="page" class="type-interior" id="gadget-page">
+    <div data-role="header" data-position="fixed">
+      <h1>Checklist of Doom</h1>
+      <div data-role="navbar" id="menu">
+        <ul>
+          <li><a href="#plan-page">Plans</a></li>
+          <li><a href="#gadget-page" class="ui-btn-active ui-state-persist">Gadgets</a></li>
+          <li><a href="#loot-page">Loot</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div data-role="content" id="gadget-content">
+      <h1>Your Brilliant Inventions:</h1>
+      <div id="gadget-list"></div>
+    </div>
+  </div>
+
+  <!--
+      Loot page
+    -->
+  <div data-role="page" class="type-interior" id="loot-page">
+    <div data-role="header" data-position="fixed">
+      <h1>Checklist of Doom</h1>
+      <div data-role="navbar" id="menu">
+        <ul>
+          <li><a href="#plan-page">Plans</a></li>
+          <li><a href="#gadget-page">Gadgets</a></li>
+          <li><a href="#loot-page" class="ui-btn-active ui-state-persist">Loot</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div data-role="content" id="loot-content">
+      <h1>Your Ill-Gotten Gains:</h1>
+      <ul class="listview" data-role="listview" data-inset="true" id="loot-list">
+      </ul>
+    </div>
+  </div>
+
+  <!--
+      Build Page
+    -->
+  <div data-role="page" class="type-interior" id="build-page">
+    <div data-role="header" data-position="fixed">
+      <h1>Select a Plan to Execute</h1>
+    </div>
+
+    <div data-role="content" id="build-content">
+      <div id="build-list"></div>
+      <br/><br/>
+      <a href="#plan-page" data-role="button">Cancel</a>
+    </div>
+  </div>
+
+  <!--
+      Win Page
+    -->
+  <div data-role="page" class="type-interior" id="win-page">
+    <div data-role="header" data-position="fixed">
+      <h1>You are victorious!</h1>
+    </div>
+    <div data-role="content">
+      <div id="win-content">
+      </div>
+      <a id="restart-button" data-role="button">Play Another Module</a>
+    </div>
+  </div>
+</body>
+</html>

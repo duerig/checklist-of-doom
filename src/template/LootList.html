@@ -1,0 +1,9 @@
+<% var i = 0;
+   for (i = 0; i < sorted.length; i++) {
+     var key = sorted[i];
+     if (loot[key] > 0) { %>
+  <li>
+    <h2><%- module.loot[key].title %> (<%- loot[key] %>)</h2>
+    <p><%- module.loot[key].description %></p>
+  </li>
+<% }} %>

@@ -1,0 +1,12 @@
+<ul class="listview" data-role="listview" data-inset="true">
+<% var i = 0; for (i = 0; i < templates.length; i++) { %>
+  <li>
+    <a class="build-select" href="#plan-page" data-index="<%- i %>">
+      <h2><%- templates[i].title %></h2>
+      <p><%- templates[i].description %></p>
+      <p><strong><%= rewardLoot[i] %></strong></p>
+      <p><strong><%= rewardGadget[i] %></strong></p>
+    </a>
+  </li>
+<% } %>
+</ul>
